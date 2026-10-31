@@ -271,22 +271,22 @@ const capsuleMessages = {
   miss: {
     title: 'Pas Lagi Kangen Berat 💭',
     icon: '💭',
-    text: `Kalo lagi kangen, inget ya kalo aku di sini juga sama kangennya wkwk. Jarak emang ngeselin, tapi sabar dikit yaa. Nanti pas ketemu langsung, kita jalan-jalan bareng dan makan yang enak-enak sepuasnya! You're always in my thoughts.`
+    text: `Kalo lagi kangen, inget ya sayang kalo aku di sini juga sama kangennya wkwk. Jarak emang ngeselin, tapi sabar dikit yaa. Nanti pas ketemu langsung, kita jalan-jalan bareng dan makan yang enak-enak sepuasnya! You're always in my thoughts.`
   },
   stress: {
     title: 'Pas Lagi Capek / Banyak Pikiran 🌿',
     icon: '🌸',
-    text: `Tarik nafas pelan-pelan dulu yuk. Kamu udah berusaha sebaik mungkin hari ini, jangan terlalu keras sama diri sendiri ya. Kalo butuh temen cerita atau cuma pengen ngomel-ngomel, telepon aku aja kapanpun kamu butuh.`
+    text: `Tarik nafas pelan-pelan dulu yuk sayang. Kamu udah berusaha sebaik mungkin hari ini, jangan terlalu keras sama diri sendiri ya. Kalo butuh temen cerita atau cuma pengen ngomel-ngomel, telepon aku aja kapanpun kamu butuh.`
   },
   smile: {
     title: 'Pas Butuh Mood Booster 🥰',
     icon: '✨',
-    text: `Tau ga? Senyum kamu itu manis banget tau. Kalo lagi bad mood, coba inget hal-hal lucu pas kita video call atau hal random yang pernah kita ketawain bareng. Semangat ya cantik!`
+    text: `Tau ga? Senyum kamu itu manis banget tau. Kalo lagi bad mood, coba inget hal-hal lucu pas kita video call atau hal random yang pernah kita ketawain bareng. Semangat ya sayang!`
   },
   ldr: {
     title: 'Soal LDR Kita ✈️',
     icon: '✈️',
-    text: `Ngejalanin LDR emang banyak tantangannya, tapi makasih ya udah saling percaya dan jaga komitmen bareng aku sejauh ini. Semoga segera tiba harinya kita ga perlu pamit di bandara/stasiun lagi karena udah tinggal satu kota. I believe in us! ❤️`
+    text: `Ngejalanin LDR emang banyak tantangannya, tapi makasih ya sayang udah saling percaya dan jaga komitmen bareng aku sejauh ini. Semoga segera tiba harinya kita ga perlu pamit-pamitan lagi karena udah satu kota. I believe in us! ❤️`
   }
 };
 

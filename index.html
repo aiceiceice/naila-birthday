@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Naila ❤️ | Forever Yours</title>
+  <meta name="description" content="A special romantic birthday website created with love for Naila.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+</head>
+<body>
+  <!-- Interactive Petals & Sparkles Canvas -->
+  <canvas id="petalsCanvas"></canvas>
+
+  <!-- Audio Player Floating Control -->
+  <div class="music-controller">
+    <button id="musicToggleBtn" class="music-btn" aria-label="Toggle Romantic Music">
+      <span class="music-icon" id="musicIcon">🎵</span>
+      <span class="music-text">Play Romantic Melody</span>
+    </button>
+  </div>
+
+  <!-- Intro Screen: Romantic Wax Sealed Envelope -->
+  <div id="introOverlay" class="intro-overlay">
+    <div class="intro-container">
+      <div class="sparkle-stars">✨ 🌟 ✨</div>
+      <div class="intro-envelope" id="envelopeBox">
+        <div class="envelope-back"></div>
+        <div class="envelope-letter-preview">
+          <p>For My Dearest Naila</p>
+          <span>Happy Birthday My Love ❤️</span>
+        </div>
+        <div class="envelope-top" id="envelopeFlap"></div>
+        <div class="envelope-front"></div>
+        <div class="wax-seal" id="waxSeal">
+          <span>N & F</span>
+        </div>
+      </div>
+      <div class="intro-instructions">
+        <h2>A Special Birthday Surprise For You</h2>
+        <p>Close your eyes, take a breath, and tap the wax seal to open your birthday letter...</p>
+        <button class="open-surprise-btn" id="openSurpriseBtn">
+          <span>Open With Love ❤️</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Website Content -->
+  <div id="mainContent" class="main-content hidden">
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="hero-badge">Special Birthday Edition • October 31</div>
+      <h1 class="hero-title">Happy Birthday, <span class="highlight-name">Naila</span>!</h1>
+      <p class="hero-subtitle">To the most wonderful, gorgeous, and loving person in my entire universe. Today, tomorrow, and forever — you are my greatest blessing.</p>
+      
+      <div class="floating-pills">
+        <span class="pill">💖 My Whole World</span>
+        <span class="pill">✨ My Favorite Smile</span>
+        <span class="pill">🌸 Beautiful Soul</span>
+        <span class="pill">🥂 Forever & Always</span>
+      </div>
+
+      <div class="scroll-cue">
+        <span>Scroll down for your surprises</span>
+        <div class="chevron">↓</div>
+      </div>
+    </header>
+
+    <!-- Interactive Birthday Cake & Wish Ceremony -->
+    <section class="cake-section">
+      <div class="section-badge">Make A Wish</div>
+      <h2 class="section-title">Blow Out Your Birthday Candles 🎂</h2>
+      <p class="section-desc">Close your eyes, make the deepest wish of your heart, and tap the button to blow out your candles!</p>
+
+      <div class="cake-container">
+        <!-- 3-Tier Illustrated Romantic Cake -->
+        <div class="cake-wrapper" id="cakeWrapper">
+          <div class="candles-row" id="candlesRow">
+            <div class="candle candle-1">
+              <div class="flame" id="flame1"></div>
+              <div class="wick"></div>
+              <div class="candle-body"></div>
+            </div>
+            <div class="candle candle-2">
+              <div class="flame" id="flame2"></div>
+              <div class="wick"></div>
+              <div class="candle-body"></div>
+            </div>
+            <div class="candle candle-3">
+              <div class="flame" id="flame3"></div>
+              <div class="wick"></div>
+              <div class="candle-body"></div>
+            </div>
+          </div>
+          <div class="cake-tier tier-top">
+            <div class="frosting frosting-top"></div>
+            <div class="berries">🍓 🍒 🍓</div>
+          </div>
+          <div class="cake-tier tier-mid">
+            <div class="frosting frosting-mid"></div>
+            <div class="ribbon-line"></div>
+          </div>
+          <div class="cake-tier tier-base">
+            <div class="frosting frosting-base"></div>
+            <div class="pearls">○○○○○○○○○○○○○</div>
+          </div>
+          <div class="cake-plate"></div>
+        </div>
+      </div>
+
+      <div class="cake-controls">
+        <button id="blowCandlesBtn" class="romantic-action-btn">
+          <span>🌬️ Make a Wish & Blow Candles</span>
+        </button>
+        <p id="wishMessage" class="wish-message-reveal hidden">
+          🎉 <strong>May all your wishes and prayers come true, my love!</strong> You deserve the world and every piece of happiness it has to offer. I love you endlessly! ❤️✨
+        </p>
+      </div>
+    </section>
+
+    <!-- Romantic Love Letter -->
+    <section class="letter-section">
+      <div class="letter-parchment">
+        <div class="letter-header">
+          <span class="letter-date">October 31st</span>
+          <div class="heart-stamp">💌</div>
+        </div>
+        <h3 class="letter-greeting">Dearest Naila,</h3>
+        <div class="letter-body">
+          <p>
+            Happy Birthday, my beautiful! Words will never be quite enough to tell you how deeply special you are to me, but today I want to remind you just how much warmth and joy you bring into my life.
+          </p>
+          <p>
+            Every single day with you is a gift. Your laughter can turn around my heaviest moments, your kindness inspires me to be a better person, and just holding your hand makes every worry disappear. When I look at you, I see my home, my peace, and my future.
+          </p>
+          <p>
+            On this birthday, I pray that Allah blesses you with abundant health, gentle peace of mind, success in everything you set your mind to, and endless reasons to smile. May your heart always stay as sweet and pure as it is today.
+          </p>
+          <p>
+            Thank you for being you, for loving me, and for sharing your life with me. No matter what comes our way, I promise to stand by you, cherish you, protect your smile, and love you more and more with every passing day.
+          </p>
+        </div>
+        <div class="letter-footer">
+          <p class="letter-closing">Forever & wholeheartedly yours,</p>
+          <p class="letter-signature">Fajar ❤️</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why I Love You - Interactive Reasons -->
+    <section class="reasons-section">
+      <div class="section-badge">Reasons For My Heart</div>
+      <h2 class="section-title">Little Things I Adore About You</h2>
+      <p class="section-desc">Tap each card to reveal a secret love note...</p>
+
+      <div class="reasons-grid">
+        <div class="reason-card" data-card="1">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-icon">✨</span>
+              <h4>Your Beautiful Smile</h4>
+              <p class="tap-hint">Tap to open 💌</p>
+            </div>
+            <div class="card-back">
+              <p>The way your eyes crinkle when you truly laugh is genuinely my favorite sight in the whole universe.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" data-card="2">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-icon">🌸</span>
+              <h4>Your Pure Kindness</h4>
+              <p class="tap-hint">Tap to open 💌</p>
+            </div>
+            <div class="card-back">
+              <p>You have the most caring heart. You notice little details and make everyone around you feel warm and valued.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" data-card="3">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-icon">☕</span>
+              <h4>Our Cozy Talks</h4>
+              <p class="tap-hint">Tap to open 💌</p>
+            </div>
+            <div class="card-back">
+              <p>Whether we talk for hours about our dreams or simply sit together in silence, being with you feels like home.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" data-card="4">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-icon">🌟</span>
+              <h4>Your Strength & Grace</h4>
+              <p class="tap-hint">Tap to open 💌</p>
+            </div>
+            <div class="card-back">
+              <p>I admire how passionate and resilient you are. You inspire me every single day to never give up.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" data-card="5">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-icon">🧸</span>
+              <h4>Your Cute Quirks</h4>
+              <p class="tap-hint">Tap to open 💌</p>
+            </div>
+            <div class="card-back">
+              <p>Every funny expression, sweet pout, and adorable habit of yours makes me fall in love with you all over again.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" data-card="6">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-icon">💍</span>
+              <h4>Our Forever Future</h4>
+              <p class="tap-hint">Tap to open 💌</p>
+            </div>
+            <div class="card-back">
+              <p>I cannot wait for all the journeys, milestones, sunsets, and adventures we still have ahead of us together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sweet Memory Polaroid Gallery -->
+    <section class="gallery-section">
+      <div class="section-badge">Sweet Memories</div>
+      <h2 class="section-title">Our Romantic Keepsakes 📸</h2>
+      <p class="section-desc">Snapshots of moments that live rent-free in my heart forever</p>
+
+      <div class="polaroid-grid">
+        <div class="polaroid-frame frame-rotate-1">
+          <div class="polaroid-img-wrapper">
+            <div class="polaroid-art art-1">
+              <div class="art-content">
+                <span class="art-emoji">🌅</span>
+                <span class="art-label">Golden Hour Walks</span>
+              </div>
+            </div>
+          </div>
+          <div class="polaroid-caption">When time felt completely frozen with you</div>
+        </div>
+
+        <div class="polaroid-frame frame-rotate-2">
+          <div class="polaroid-img-wrapper">
+            <div class="polaroid-art art-2">
+              <div class="art-content">
+                <span class="art-emoji">☕</span>
+                <span class="art-label">Coffee & Deep Conversations</span>
+              </div>
+            </div>
+          </div>
+          <div class="polaroid-caption">Our endless cozy dates & giggles</div>
+        </div>
+
+        <div class="polaroid-frame frame-rotate-3">
+          <div class="polaroid-img-wrapper">
+            <div class="polaroid-art art-3">
+              <div class="art-content">
+                <span class="art-emoji">🌙</span>
+                <span class="art-label">Under The Starlit Sky</span>
+              </div>
+            </div>
+          </div>
+          <div class="polaroid-caption">Counting our dreams together under the stars</div>
+        </div>
+
+        <div class="polaroid-frame frame-rotate-4">
+          <div class="polaroid-img-wrapper">
+            <div class="polaroid-art art-4">
+              <div class="art-content">
+                <span class="art-emoji">💐</span>
+                <span class="art-label">Just Because Moments</span>
+              </div>
+            </div>
+          </div>
+          <div class="polaroid-caption">Because bringing a smile to your face is my greatest joy</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- "Open When..." Love Envelopes -->
+    <section class="capsules-section">
+      <div class="section-badge">Special Love Capsules</div>
+      <h2 class="section-title">"Open When..." Envelopes 💌</h2>
+      <p class="section-desc">Whenever you need a little piece of my love, tap the envelope that fits your moment:</p>
+
+      <div class="capsules-container">
+        <button class="capsule-btn" data-modal="miss">
+          <span class="capsule-icon">💭</span>
+          <span class="capsule-title">When you miss me</span>
+        </button>
+        <button class="capsule-btn" data-modal="stress">
+          <span class="capsule-icon">🌿</span>
+          <span class="capsule-title">When you feel overwhelmed</span>
+        </button>
+        <button class="capsule-btn" data-modal="smile">
+          <span class="capsule-icon">🥰</span>
+          <span class="capsule-title">When you need a smile</span>
+        </button>
+        <button class="capsule-btn" data-modal="doubt">
+          <span class="capsule-icon">💖</span>
+          <span class="capsule-title">When you wonder how much I love you</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Interactive Love Fortune / Message Jar -->
+    <section class="jar-section">
+      <div class="jar-card">
+        <div class="jar-icon">🏺✨</div>
+        <h3 class="jar-title">Naila's Birthday Message Jar</h3>
+        <p class="jar-subtitle">Pick a glowing note from our love jar whenever you want a reminder of my love.</p>
+        
+        <div class="jar-display" id="jarDisplay">
+          "Tap the button below to pick a love note..."
+        </div>
+
+        <button id="drawNoteBtn" class="romantic-action-btn secondary">
+          <span>💌 Draw Another Love Note</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Sweet Ending & Promise -->
+    <footer class="romantic-footer">
+      <div class="footer-heart">💖</div>
+      <h2 class="footer-title">Happy Birthday, My Precious Naila!</h2>
+      <p class="footer-text">
+        May this new age bring you boundless happiness, peace, success, and love.<br>
+        I will always be right here cheering for you, admiring you, and holding your hand.
+      </p>
+      <div class="footer-signature">
+        Crafted with all my love, exclusively for you.<br>
+        <strong>Muhammad Fajar Andikha ❤️ Naila</strong>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Modal for "Open When" envelopes -->
+  <div id="loveModal" class="love-modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close message">&times;</button>
+      <div class="modal-icon" id="modalIcon">💌</div>
+      <h3 class="modal-title" id="modalTitle">For Naila</h3>
+      <div class="modal-text" id="modalText">Message goes here...</div>
+      <button class="modal-btn" id="modalConfirmBtn">I Love You Too ❤️</button>
+    </div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>

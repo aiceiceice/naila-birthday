@@ -1,6 +1,6 @@
 /* =========================================================
-   Romantic Birthday Experience for Naila
-   Created with all the love by Muhammad Fajar Andikha
+   Birthday Website for Naila
+   From Fajar ❤️
 ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initCakeCandles();
   initFlipCards();
   initOpenWhenModals();
-  initMessageJar();
+  initLightboxGallery();
   initInteractiveClickHearts();
 });
 
 /* ---------------------------------------------------------
-   1. Falling Rose Petals & Floating Sparkles Canvas
+   1. Falling Rose Petals Canvas
 --------------------------------------------------------- */
 function initPetalsCanvas() {
   const canvas = document.getElementById('petalsCanvas');
@@ -91,7 +91,7 @@ function initPetalsCanvas() {
 }
 
 /* ---------------------------------------------------------
-   2. Dreamy Romantic Web Audio Synthesizer
+   2. Audio Synthesizer (Gentle romantic melody)
 --------------------------------------------------------- */
 let audioCtx = null;
 let isPlaying = false;
@@ -111,7 +111,7 @@ function initAudioPlayer() {
     } else {
       stopMelody();
       toggleBtn.classList.remove('playing');
-      if (musicText) musicText.textContent = 'Play Romantic Melody';
+      if (musicText) musicText.textContent = 'Play Music';
     }
   });
 }
@@ -128,12 +128,11 @@ function startMelody() {
 
   isPlaying = true;
 
-  // Romantic music chord progression: Cmaj7 - Am7 - Fmaj7 - G6
   const chords = [
-    [261.63, 329.63, 392.0, 493.88], // C, E, G, B (Cmaj7)
-    [220.0, 261.63, 329.63, 392.0],  // A, C, E, G (Am7)
-    [174.61, 220.0, 261.63, 329.63], // F, A, C, E (Fmaj7)
-    [196.0, 246.94, 293.66, 392.0]   // G, B, D, G (G)
+    [261.63, 329.63, 392.0, 493.88], // Cmaj7
+    [220.0, 261.63, 329.63, 392.0],  // Am7
+    [174.61, 220.0, 261.63, 329.63], // Fmaj7
+    [196.0, 246.94, 293.66, 392.0]   // G
   ];
 
   let chordIndex = 0;
@@ -148,7 +147,7 @@ function startMelody() {
     osc.frequency.setValueAtTime(freq, audioCtx.currentTime + delay);
 
     gain.gain.setValueAtTime(0.001, audioCtx.currentTime + delay);
-    gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + delay + 0.1);
+    gain.gain.exponentialRampToValueAtTime(0.07, audioCtx.currentTime + delay + 0.1);
     gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + delay + duration);
 
     osc.connect(gain);
@@ -158,7 +157,6 @@ function startMelody() {
     osc.stop(audioCtx.currentTime + delay + duration + 0.1);
   }
 
-  // Play gentle arpeggiated romantic chords
   melodyInterval = setInterval(() => {
     if (!isPlaying) return;
     const currentChord = chords[chordIndex];
@@ -183,7 +181,7 @@ function stopMelody() {
 }
 
 /* ---------------------------------------------------------
-   3. Wax Seal Intro & Envelope Opening Sequence
+   3. Wax Seal Envelope Intro
 --------------------------------------------------------- */
 function initIntroSequence() {
   const introOverlay = document.getElementById('introOverlay');
@@ -196,10 +194,8 @@ function initIntroSequence() {
     if (envelopeBox.classList.contains('open')) return;
     envelopeBox.classList.add('open');
 
-    // Trigger sweet heart confetti
     burstHeartsConfetti(window.innerWidth / 2, window.innerHeight / 2);
 
-    // Auto-start music if not playing yet
     const musicBtn = document.getElementById('musicToggleBtn');
     if (!isPlaying) {
       startMelody();
@@ -214,7 +210,7 @@ function initIntroSequence() {
       introOverlay.classList.add('fade-out');
       mainContent.classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 1300);
+    }, 1200);
   }
 
   if (waxSeal) waxSeal.addEventListener('click', openEnvelope);
@@ -241,14 +237,13 @@ function initCakeCandles() {
       if (flame) flame.classList.add('extinguished');
     });
 
-    // Massive confetti celebration
     burstMassiveConfetti();
 
     if (wishMessage) {
       wishMessage.classList.remove('hidden');
     }
 
-    blowBtn.innerHTML = '<span>✨ Wish Sent to the Stars! ✨</span>';
+    blowBtn.innerHTML = '<span>✨ Doa Terkirim! Amiin 🤲 ✨</span>';
     blowBtn.disabled = true;
     blowBtn.style.opacity = '0.85';
     blowBtn.style.cursor = 'default';
@@ -256,43 +251,42 @@ function initCakeCandles() {
 }
 
 /* ---------------------------------------------------------
-   5. Flip Cards for "Reasons Why I Adore You"
+   5. Flip Cards
 --------------------------------------------------------- */
 function initFlipCards() {
   const cards = document.querySelectorAll('.reason-card');
   cards.forEach((card) => {
     card.addEventListener('click', () => {
       card.classList.toggle('is-flipped');
-      // Spawn subtle burst around the card
       const rect = card.getBoundingClientRect();
-      burstHeartsConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 10);
+      burstHeartsConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 8);
     });
   });
 }
 
 /* ---------------------------------------------------------
-   6. "Open When..." Love Capsule Modals
+   6. "Buka Pas..." Modal Messages (Natural & Grounded)
 --------------------------------------------------------- */
 const capsuleMessages = {
   miss: {
-    title: 'When You Miss Me 💌',
+    title: 'Pas Lagi Kangen Berat 💭',
     icon: '💭',
-    text: `My dearest Naila, whenever you miss me, close your eyes and put your hand on your heart. Hear that steady rhythm? That is proof of how deeply and constantly you are loved. No matter the distance, time, or busy days, you are always the first thought when I wake up and the last prayer when I sleep. I am never further away than a call or a heartbeat.`
+    text: `Kalo lagi kangen, inget ya kalo aku di sini juga sama kangennya wkwk. Jarak emang ngeselin, tapi sabar dikit yaa. Nanti pas ketemu langsung, kita jalan-jalan bareng dan makan yang enak-enak sepuasnya! You're always in my thoughts.`
   },
   stress: {
-    title: 'When You Feel Overwhelmed 🌿',
+    title: 'Pas Lagi Capek / Banyak Pikiran 🌿',
     icon: '🌸',
-    text: `Take a deep breath right now, my love. Relax your shoulders. You do not have to carry everything all at once. You are doing so much better than you give yourself credit for. I believe in your strength, but remember you don’t always have to be strong alone — lean on me anytime. Everything will turn out wonderfully. I am right beside you.`
+    text: `Tarik nafas pelan-pelan dulu yuk. Kamu udah berusaha sebaik mungkin hari ini, jangan terlalu keras sama diri sendiri ya. Kalo butuh temen cerita atau cuma pengen ngomel-ngomel, telepon aku aja kapanpun kamu butuh.`
   },
   smile: {
-    title: 'When You Need a Smile 🥰',
+    title: 'Pas Butuh Mood Booster 🥰',
     icon: '✨',
-    text: `Did you know that science says smiling makes you 100x cuter? Not that you need it, because you're already the prettiest girl in the world! Think of all our silliest inside jokes, our cozy food dates, and remember that there is someone out here completely and utterly crazy about you.`
+    text: `Tau ga? Senyum kamu itu manis banget tau. Kalo lagi bad mood, coba inget hal-hal lucu pas kita video call atau hal random yang pernah kita ketawain bareng. Semangat ya cantik!`
   },
-  doubt: {
-    title: 'How Much Do I Love You? 💖',
-    icon: '💍',
-    text: `If I had a flower for every time you crossed my mind, I could walk through an eternal garden. My love for you isn't temporary or conditional — it grows deeper with every conversation, every smile, and every moment we share. You are my dream come true, Naila. Today, tomorrow, and for all our years ahead.`
+  ldr: {
+    title: 'Soal LDR Kita ✈️',
+    icon: '✈️',
+    text: `Ngejalanin LDR emang banyak tantangannya, tapi makasih ya udah saling percaya dan jaga komitmen bareng aku sejauh ini. Semoga segera tiba harinya kita ga perlu pamit di bandara/stasiun lagi karena udah tinggal satu kota. I believe in us! ❤️`
   }
 };
 
@@ -316,7 +310,7 @@ function initOpenWhenModals() {
     modalText.textContent = data.text;
 
     modal.classList.remove('hidden');
-    burstHeartsConfetti(window.innerWidth / 2, window.innerHeight / 2, 18);
+    burstHeartsConfetti(window.innerWidth / 2, window.innerHeight / 2, 15);
   }
 
   function closeModal() {
@@ -336,47 +330,37 @@ function initOpenWhenModals() {
 }
 
 /* ---------------------------------------------------------
-   7. Interactive Message Jar
+   7. Lightbox for Photo Gallery
 --------------------------------------------------------- */
-const loveNotes = [
-  "You are the best chapter in the story of my life. Happy Birthday, Naila! ❤️",
-  "Every time I hear your voice, my entire day gets 1000% brighter. ✨",
-  "I promise to always celebrate your victories, comfort your tears, and love you endlessly. 🌸",
-  "Thank you for being the sweetest, most genuine person in my life. 🥂",
-  "My favorite place in the world is simply being right next to you. 🏡",
-  "Your smile is my daily dose of sunshine and happiness. ☀️",
-  "May this year bring all your biggest dreams into reality. You deserve every blessing! 🌟",
-  "Falling in love with you was the easiest, best thing I ever did. 💖",
-  "To the girl of my dreams: Happy Birthday, beautiful! Forever yours, Fajar. 🎂"
-];
+function initLightboxGallery() {
+  const polaroids = document.querySelectorAll('.polaroid-frame');
+  const lightbox = document.getElementById('lightboxModal');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxBackdrop = document.getElementById('lightboxBackdrop');
 
-function initMessageJar() {
-  const drawBtn = document.getElementById('drawNoteBtn');
-  const jarDisplay = document.getElementById('jarDisplay');
-  if (!drawBtn || !jarDisplay) return;
+  if (!lightbox) return;
 
-  let lastIndex = -1;
-
-  drawBtn.addEventListener('click', () => {
-    let newIndex;
-    do {
-      newIndex = Math.floor(Math.random() * loveNotes.length);
-    } while (newIndex === lastIndex && loveNotes.length > 1);
-
-    lastIndex = newIndex;
-
-    jarDisplay.style.opacity = '0';
-    jarDisplay.style.transform = 'translateY(10px)';
-
-    setTimeout(() => {
-      jarDisplay.textContent = `"${loveNotes[newIndex]}"`;
-      jarDisplay.style.opacity = '1';
-      jarDisplay.style.transform = 'translateY(0)';
-    }, 250);
-
-    const rect = drawBtn.getBoundingClientRect();
-    burstHeartsConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 12);
+  polaroids.forEach((card) => {
+    card.addEventListener('click', () => {
+      const imgSrc = card.getAttribute('data-full-img');
+      const caption = card.getAttribute('data-caption') || '';
+      if (imgSrc) {
+        lightboxImg.src = imgSrc;
+        lightboxCaption.textContent = caption;
+        lightbox.classList.remove('hidden');
+      }
+    });
   });
+
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightboxImg.src = '';
+  }
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
 }
 
 /* ---------------------------------------------------------
@@ -384,40 +368,39 @@ function initMessageJar() {
 --------------------------------------------------------- */
 function initInteractiveClickHearts() {
   window.addEventListener('click', (e) => {
-    // Avoid double firing if clicking form buttons directly
-    if (e.target.closest('button') || e.target.closest('.intro-envelope')) return;
+    if (e.target.closest('button') || e.target.closest('.intro-envelope') || e.target.closest('.polaroid-frame')) return;
     spawnClickHeart(e.clientX, e.clientY);
   });
 }
 
 function spawnClickHeart(x, y) {
   const heart = document.createElement('div');
-  const hearts = ['❤️', '💖', '✨', '💕', '🥰', '🌸'];
+  const hearts = ['❤️', '✨', '🥰', '🌸', '💖'];
   heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
   heart.style.position = 'fixed';
   heart.style.left = `${x}px`;
   heart.style.top = `${y}px`;
-  heart.style.transform = 'translate(-50%, -50%) scale(0.5)';
+  heart.style.transform = 'translate(-50%, -50%) scale(0.6)';
   heart.style.pointerEvents = 'none';
   heart.style.zIndex = '99999';
-  heart.style.fontSize = '1.8rem';
-  heart.style.transition = 'all 1s cubic-bezier(0.16, 1, 0.3, 1)';
+  heart.style.fontSize = '1.6rem';
+  heart.style.transition = 'all 0.9s cubic-bezier(0.16, 1, 0.3, 1)';
   document.body.appendChild(heart);
 
   requestAnimationFrame(() => {
-    heart.style.transform = `translate(-50%, -120px) scale(1.4)`;
+    heart.style.transform = `translate(-50%, -100px) scale(1.3)`;
     heart.style.opacity = '0';
   });
 
   setTimeout(() => {
     heart.remove();
-  }, 1000);
+  }, 900);
 }
 
 /* ---------------------------------------------------------
-   9. High Performance Confetti Engine
+   9. Confetti Engine
 --------------------------------------------------------- */
-function burstHeartsConfetti(originX, originY, count = 35) {
+function burstHeartsConfetti(originX, originY, count = 30) {
   const canvas = document.getElementById('confettiCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
@@ -425,21 +408,21 @@ function burstHeartsConfetti(originX, originY, count = 35) {
   canvas.height = window.innerHeight;
 
   const particles = [];
-  const colors = ['#ff477e', '#ff7597', '#f7d070', '#ffe5ec', '#ffffff', '#a6c1ee'];
+  const colors = ['#ff477e', '#ff7597', '#f7d070', '#ffe5ec', '#ffffff'];
 
   for (let i = 0; i < count; i++) {
     const angle = Math.random() * Math.PI * 2;
-    const speed = Math.random() * 8 + 3;
+    const speed = Math.random() * 7 + 2.5;
     particles.push({
       x: originX,
       y: originY,
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed - 2,
-      size: Math.random() * 8 + 4,
+      size: Math.random() * 7 + 4,
       color: colors[Math.floor(Math.random() * colors.length)],
       alpha: 1,
       rotation: Math.random() * 360,
-      rotSpeed: Math.random() * 10 - 5
+      rotSpeed: Math.random() * 8 - 4
     });
   }
 
@@ -452,9 +435,9 @@ function burstHeartsConfetti(originX, originY, count = 35) {
       alive = true;
       p.x += p.vx;
       p.y += p.vy;
-      p.vy += 0.2; // gravity
+      p.vy += 0.2;
       p.vx *= 0.98;
-      p.alpha -= 0.015;
+      p.alpha -= 0.016;
       p.rotation += p.rotSpeed;
 
       ctx.save();
@@ -477,11 +460,11 @@ function burstHeartsConfetti(originX, originY, count = 35) {
 }
 
 function burstMassiveConfetti() {
-  burstHeartsConfetti(window.innerWidth * 0.3, window.innerHeight * 0.5, 60);
+  burstHeartsConfetti(window.innerWidth * 0.35, window.innerHeight * 0.5, 50);
   setTimeout(() => {
-    burstHeartsConfetti(window.innerWidth * 0.7, window.innerHeight * 0.5, 60);
-  }, 200);
+    burstHeartsConfetti(window.innerWidth * 0.65, window.innerHeight * 0.5, 50);
+  }, 180);
   setTimeout(() => {
-    burstHeartsConfetti(window.innerWidth * 0.5, window.innerHeight * 0.4, 80);
-  }, 400);
+    burstHeartsConfetti(window.innerWidth * 0.5, window.innerHeight * 0.4, 70);
+  }, 360);
 }

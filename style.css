@@ -832,82 +832,138 @@ section {
 ------------------------------------------- */
 .polaroid-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
   padding: 20px 10px;
 }
 
 .polaroid-frame {
-  background: #fff;
-  padding: 14px 14px 24px 14px;
-  border-radius: 6px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 2px 5px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: #ffffff;
+  padding: 14px 14px 22px 14px;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
   cursor: pointer;
+  position: relative;
 }
 
 .polaroid-frame:hover {
   transform: scale(1.05) rotate(0deg) !important;
-  box-shadow: 0 20px 45px rgba(255, 71, 126, 0.3);
+  box-shadow: 0 20px 45px rgba(255, 71, 126, 0.35);
   z-index: 10;
 }
 
-.frame-rotate-1 { transform: rotate(-3deg); }
-.frame-rotate-2 { transform: rotate(2.5deg); }
-.frame-rotate-3 { transform: rotate(-2deg); }
-.frame-rotate-4 { transform: rotate(3.5deg); }
+.frame-rotate-1 { transform: rotate(-2.5deg); }
+.frame-rotate-2 { transform: rotate(2deg); }
+.frame-rotate-3 { transform: rotate(-1.5deg); }
+.frame-rotate-4 { transform: rotate(2.5deg); }
 
 .polaroid-img-wrapper {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 4/5;
   border-radius: 4px;
   overflow: hidden;
-  background: #f0f0f0;
-}
-
-.polaroid-art {
-  width: 100%;
-  height: 100%;
+  background: #2a1527;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.5s ease;
 }
 
-.polaroid-frame:hover .polaroid-art {
-  transform: scale(1.08);
+.polaroid-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.art-1 { background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); }
-.art-2 { background: linear-gradient(135deg, #ffd1ff 0%, #fad0c4 100%); }
-.art-3 { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
-.art-4 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
-
-.art-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.art-emoji {
-  font-size: 2.8rem;
-}
-
-.art-label {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.9rem;
-  color: #333;
-  font-weight: 600;
+.polaroid-frame:hover .polaroid-real-img {
+  transform: scale(1.04);
 }
 
 .polaroid-caption {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.15rem;
-  color: #4a2835;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3e1b29;
   text-align: center;
   margin-top: 14px;
-  line-height: 1.3;
+  line-height: 1.4;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  margin-top: 14px;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: -10px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.wish-highlight-icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.wish-main-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 /* ------------------------------------------

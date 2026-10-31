@@ -269,24 +269,24 @@ function initFlipCards() {
 --------------------------------------------------------- */
 const capsuleMessages = {
   miss: {
-    title: 'Pas Lagi Kangen Berat 💭',
+    title: 'When You Miss Me Heavy 💭',
     icon: '💭',
-    text: `Kalo lagi kangen, inget ya sayang kalo aku di sini juga sama kangennya wkwk. Jarak emang ngeselin, tapi sabar dikit yaa. Nanti pas ketemu langsung, kita jalan-jalan bareng dan makan yang enak-enak sepuasnya! You're always in my thoughts.`
+    text: `Kalo lagi kangen, remember that I'm also missing you just as much from here wkwk. Jarak emang ngeselin, tapi hold on ya sayang. Once we meet up, we're gonna eat good food, explore places, and spend all day together! You're always on my mind.`
   },
   stress: {
-    title: 'Pas Lagi Capek / Banyak Pikiran 🌿',
+    title: 'When You Feel Overwhelmed 🌿',
     icon: '🌸',
-    text: `Tarik nafas pelan-pelan dulu yuk sayang. Kamu udah berusaha sebaik mungkin hari ini, jangan terlalu keras sama diri sendiri ya. Kalo butuh temen cerita atau cuma pengen ngomel-ngomel, telepon aku aja kapanpun kamu butuh.`
+    text: `Take a deep breath and relax for a bit, sayang. You've done your absolute best today, jangan terlalu keras sama diri sendiri ya. Kalo butuh temen cerita, vent out, or just need company, I'm always one call away.`
   },
   smile: {
-    title: 'Pas Butuh Mood Booster 🥰',
+    title: 'When You Need a Quick Smile 🥰',
     icon: '✨',
-    text: `Tau ga? Senyum kamu itu manis banget tau. Kalo lagi bad mood, coba inget hal-hal lucu pas kita video call atau hal random yang pernah kita ketawain bareng. Semangat ya sayang!`
+    text: `Did you know that your smile is literally my favorite sight in the world? Whenever you feel low or tired, remember all our silly moments pas video call and the funny inside jokes we laughed at. Keep smiling, pretty!`
   },
   ldr: {
-    title: 'Soal LDR Kita ✈️',
+    title: 'Thinking About Our LDR ✈️',
     icon: '✈️',
-    text: `Ngejalanin LDR emang banyak tantangannya, tapi makasih ya sayang udah saling percaya dan jaga komitmen bareng aku sejauh ini. Semoga segera tiba harinya kita ga perlu pamit-pamitan lagi karena udah satu kota. I believe in us! ❤️`
+    text: `Being in an LDR is definitely not easy, but having you makes every single distance and waiting time worth it. Makasih ya sayang for always trusting and holding on together. Semoga we close this distance soon and finally be in the same city. I believe in us! ❤️`
   }
 };
 

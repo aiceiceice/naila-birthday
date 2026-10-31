@@ -830,66 +830,101 @@ section {
 /* ------------------------------------------
    Polaroid Gallery
 ------------------------------------------- */
+/* ------------------------------------------
+   Polaroid Gallery with Smart Fit (No Over-Zoom)
+------------------------------------------- */
 .polaroid-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 28px;
-  padding: 20px 10px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  padding: 24px 10px;
 }
 
 .polaroid-frame {
   background: #ffffff;
   padding: 14px 14px 22px 14px;
   border-radius: 8px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45), 0 3px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
   cursor: pointer;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.polaroid-frame:hover {
-  transform: scale(1.05) rotate(0deg) !important;
-  box-shadow: 0 20px 45px rgba(255, 71, 126, 0.35);
+.polaroid-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+  height: 24px;
+  background: rgba(255, 235, 204, 0.7);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(2px);
+  border-radius: 2px;
   z-index: 10;
 }
 
-.frame-rotate-1 { transform: rotate(-2.5deg); }
+.polaroid-frame:hover {
+  transform: scale(1.04) rotate(0deg) !important;
+  box-shadow: 0 22px 48px rgba(255, 71, 126, 0.4);
+  z-index: 20;
+}
+
+.frame-rotate-1 { transform: rotate(-2deg); }
 .frame-rotate-2 { transform: rotate(2deg); }
 .frame-rotate-3 { transform: rotate(-1.5deg); }
-.frame-rotate-4 { transform: rotate(2.5deg); }
+.frame-rotate-4 { transform: rotate(1.8deg); }
 
 .polaroid-img-wrapper {
+  position: relative;
   width: 100%;
   aspect-ratio: 4/5;
   border-radius: 4px;
   overflow: hidden;
-  background: #2a1527;
+  background: #180b1e;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Ambient blurred background fills any empty margins with the photo's own colors */
+.polaroid-blur-bg {
+  position: absolute;
+  inset: -15px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(16px) brightness(0.6);
+  transform: scale(1.15);
+  z-index: 1;
+}
+
+/* The actual photo is fully visible, never awkwardly cropped or hyper-zoomed */
 .polaroid-real-img {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  max-height: 100%;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.35s ease;
 }
 
 .polaroid-frame:hover .polaroid-real-img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .polaroid-caption {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #3e1b29;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #3b1727;
   text-align: center;
   margin-top: 14px;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 /* Lightbox Modal */

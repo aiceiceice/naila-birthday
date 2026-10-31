@@ -835,9 +835,21 @@ section {
 ------------------------------------------- */
 .polaroid-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
   padding: 24px 10px;
+}
+
+@media (max-width: 860px) {
+  .polaroid-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .polaroid-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .polaroid-frame {
